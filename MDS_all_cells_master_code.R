@@ -969,13 +969,13 @@ FeaturePlot(MDS_NBM_Immune, features=c("FCGR3A","NCAM1","CD3D"),order=T,min.cuto
 Immune_meta<-MDS_NBM_Immune@meta.data
 
 MDS_NBM_Immune[["Immune_type"]]<-"Unknown"
-MDS_NBM_Immune$Immune_type[which(MDS_NBM_Immune$seurat_clusters=="7")]<-"CD8 CCR7+"
-MDS_NBM_Immune$Immune_type[which(MDS_NBM_Immune$seurat_clusters=="0")]<-"CD4 CCR7+"
+MDS_NBM_Immune$Immune_type[which(MDS_NBM_Immune$seurat_clusters=="7")]<-"CD8 Naive"
+MDS_NBM_Immune$Immune_type[which(MDS_NBM_Immune$seurat_clusters=="0")]<-"CD4 Naive"
 MDS_NBM_Immune$Immune_type[which(MDS_NBM_Immune$seurat_clusters %in% c("5"))]<-"Th1/17"
 MDS_NBM_Immune$Immune_type[which(MDS_NBM_Immune$seurat_clusters %in% c("1"))]<-"Th2"
 MDS_NBM_Immune$Immune_type[which(MDS_NBM_Immune$seurat_clusters %in% c("9"))]<-"Treg"
-MDS_NBM_Immune$Immune_type[which(MDS_NBM_Immune$seurat_clusters %in% c("2"))]<-"CD8 GZMK+"
-MDS_NBM_Immune$Immune_type[which(MDS_NBM_Immune$seurat_clusters %in% c("3"))]<-"CD8 GZMB+"
+MDS_NBM_Immune$Immune_type[which(MDS_NBM_Immune$seurat_clusters %in% c("2"))]<-"CD8 EM"
+MDS_NBM_Immune$Immune_type[which(MDS_NBM_Immune$seurat_clusters %in% c("3"))]<-"CD8 TEMRA"
 MDS_NBM_Immune$Immune_type[which(MDS_NBM_Immune$seurat_clusters %in% c("8","10"))]<-"T unknown"
 MDS_NBM_Immune$Immune_type[which(MDS_NBM_Immune$seurat_clusters %in% c("4"))]<-"NK CD56dim"
 MDS_NBM_Immune$Immune_type[which(MDS_NBM_Immune$seurat_clusters %in% c("6"))]<-"NK CD56high"
@@ -1069,7 +1069,7 @@ plot_density(MDS_NBM_Immune, "CD3D")
 #CD8+
 
 
-MDS_NBM_CD8<-subset(MDS_NBM_Immune, ident=c("CD8 GZMK+", "CD8 GZMB+", "CD8 CCR7+"))
+MDS_NBM_CD8<-subset(MDS_NBM_Immune, ident=c("CD8 TEMRA", "CD8 EM", "CD8 CCR7+"))
 
 
 
