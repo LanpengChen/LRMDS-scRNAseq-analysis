@@ -48,7 +48,8 @@ NBM1_merge <- NormalizeData(NBM1_merge, normalization.method = "LogNormalize", s
 
 NBM1_merge[["Group"]]<-"NBM"
 NBM1_merge[["Sample"]]<-"NBM1"
-
+##################
+#Continue the same procedual for each samples individually (NBM1-4, MDS1-5)
 #Integratation NBM_all
 #Integration of NBM
 
